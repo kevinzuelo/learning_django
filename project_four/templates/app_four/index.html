@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'app_four/base.html' %}
+{% load my_extras %}
+
+{% block body_block %}
+    <h1>Welcom to Index</h1>
+    <h2>Template inheritance</h2>
+    <h1>
+        {{ text|cutter_filter:' ' }}
+    </h1>
+    <h1>
+        {{ number|add:"99"}}
+    </h1>
+  
+   
+{% endblock body_block %}
+    

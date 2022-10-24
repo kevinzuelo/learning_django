@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class ="navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+                <li><a class ="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a class="navbar-link" href="{% url 'app_four:other' %}">Other</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+        {% block body_block %}
+        {% comment %} Anything outside of this will be inherited if you extend {% endcomment %}
+        {% endblock body_block %}
+
+    </div>
+    
+</body>
+</html>
