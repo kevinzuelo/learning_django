@@ -11,3 +11,24 @@
 .center-stage{
     margin:auto;
 }
+
+.post-date {
+    text-align: center;
+
+}
+
+.post-title {
+    font-family: 'Oswald';
+    font-size: 3em;
+    text-align: center;
+}
+
+.post-content{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+.btn-comment{
+    position: absolute;
+    right: 0px;
+}
