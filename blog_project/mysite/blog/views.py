@@ -22,7 +22,7 @@ class PostDetailView(DetailView):
     
 class CreatePostView(CreateView, LoginRequiredMixin):
     login_url = '/login/'
-    redirect_field_name = 'blog/post/detail.html'
+    redirect_field_name = 'blog/post_detail.html'
     form_class = PostForm
     model = Post
     
@@ -48,7 +48,7 @@ class DraftListView(ListView, LoginRequiredMixin):
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk = pk)
-    post.publish 
+    post.publish() 
     return redirect('post_detail', pk)
 
 @login_required
