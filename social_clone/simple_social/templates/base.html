@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'simple_social/css/master.css'%}">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <title>Horizons Social</title>
+
 </head>
 <body>
     {% block content %}
     
     {% endblock content %}
 </body>
+
+<nav class='navbar my-nav' role='navigation' id='navbar'>
+    <div class='container'>
+        <a class='my nav navbar-brand' href="{% url 'home' %}">Horizons Social</a>
+
+        <ul class='nav navbar-nav navbar-right'>
+            {% if user.is_authenticated %}
+                <li><a href="#">Post</a></li>
+                <li><a href="#"></a>Groups</li>
+                <li><a href="#"></a>Create Group</li>
+                <li><a href="{% url 'accounts:logout' %}"></a>Log Out</li>
+            {% else %}
+                <li><a href="#">Groups</a></li>
+                <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class='container my-content'>
+        {% block content %}
+    
+        {% endblock content %}
+
+    </div>
+
+
+</nav>
 </html>
